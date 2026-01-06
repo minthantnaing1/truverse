@@ -1,0 +1,97 @@
+[
+  {
+    "id": "p1",
+    "author": "Emma Thompson",
+    "verified": true,
+    "time": "2h",
+    "text": "Just got back from an incredible weekend getaway! 🏝️🌤️ The beach was absolutely beautiful and the sunset last night was breathtaking. Already planning my next trip!",
+    "likes": 247,
+    "comments": 32,
+    "shares": 15,
+    "detected": false
+  },
+  {
+    "id": "p2",
+    "author": "Daily Health Tips",
+    "verified": false,
+    "time": "12h",
+    "text": "🔥 MIRACLE CURE DISCOVERED! 🔥\n\nDoctors HATE this one simple trick! This amazing natural remedy cures ALL diseases instantly...\n\nClick the link to learn more before Big Pharma takes this down!",
+    "likes": 19,
+    "comments": 4,
+    "shares": 2,
+    "detected": true,
+    "label": "AI-Generated Content",
+    "confidence": 98,
+    "analysis": {
+      "aiWritingProbability": 97,
+      "patterns": [
+        "Clickbait formula",
+        "Excessive superlatives",
+        "Fear-mongering",
+        "Urgency creation",
+        "No scientific evidence"
+      ],
+      "flags": [
+        "Extreme sensationalism",
+        "Impossible medical claims",
+        "Conspiracy rhetoric",
+        "Scam language patterns",
+        "Call-to-action manipulation"
+      ],
+      "credibilityScore": 4,
+      "verifiedSource": false,
+      "similarContentFound": [
+        "Scam websites",
+        "Fake health claims",
+        "Misinformation clusters"
+      ]
+    }
+  },
+  {
+    "id": "p3",
+    "author": "TechNews Daily",
+    "verified": true,
+    "time": "3h",
+    "text": "BREAKING: Major tech company announces revolutionary quantum breakthrough that will change everything we know about computing. SHARE before it gets deleted!",
+    "likes": 981,
+    "comments": 210,
+    "shares": 120,
+    "detected": true,
+    "label": "Potential Misinformation",
+    "confidence": 94,
+    "analysis": {
+      "aiWritingProbability": 86,
+      "patterns": [
+        "Viral framing",
+        "Urgency creation",
+        "Low verifiability claims"
+      ],
+      "flags": ["Lacks sources", "Overclaim language", "Manipulative CTA"],
+      "credibilityScore": 22,
+      "verifiedSource": false,
+      "similarContentFound": ["Content farms", "Reposted headlines"]
+    }
+  },
+  {
+    "id": "p4",
+    "author": "Foodie Corner",
+    "verified": false,
+    "time": "6h",
+    "text": "Quick dinner idea: garlic butter shrimp pasta 🍤🧄 Ready in 15 minutes. Who wants the recipe?",
+    "likes": 412,
+    "comments": 61,
+    "shares": 9,
+    "detected": false
+  },
+  {
+    "id": "p5",
+    "author": "Nature Moments",
+    "verified": true,
+    "time": "1d",
+    "text": "Morning walk 🌿 Take a breath, slow down, and notice the small things.",
+    "likes": 1250,
+    "comments": 88,
+    "shares": 33,
+    "detected": false
+  }
+]
