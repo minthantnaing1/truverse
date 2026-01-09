@@ -29,22 +29,42 @@ export default function DemoPage() {
 
   const visiblePosts = useMemo(() => posts, [posts]);
 
-  const scannedCount = posts.length;
+  // ✅ Counts (fixed logic)
+  const scannedCount = useMemo(() => {
+    return protectionOn ? posts.length : 0;
+  }, [posts.length, protectionOn]);
+
+  const blockedCount = useMemo(() => {
+    if (!protectionOn) return 0;
+    // count only ids that exist in current feed (avoid weird stale state)
+    const ids = new Set(posts.map((p) => p.id));
+    return Object.keys(blocked).filter((id) => blocked[id] && ids.has(id))
+      .length;
+  }, [blocked, posts, protectionOn]);
+
+  const reportedCount = useMemo(() => {
+    if (!protectionOn) return 0;
+    const ids = new Set(posts.map((p) => p.id));
+    return Object.keys(reported).filter((id) => reported[id] && ids.has(id))
+      .length;
+  }, [reported, posts, protectionOn]);
 
   const detectedCount = useMemo(() => {
     if (!protectionOn) return 0;
-    return posts.filter((p) => p.detected).length;
-  }, [posts, protectionOn]);
+    // ✅ Flagged = detected AND not blocked
+    return posts.filter((p) => p.detected && !blocked[p.id]).length;
+  }, [posts, protectionOn, blocked]);
 
   const verifiedCount = useMemo(() => {
-    if (!protectionOn) return scannedCount;
+    if (!protectionOn) return 0;
+    // ✅ Verified = not detected (regardless of blocked/reported)
     return posts.filter((p) => !p.detected).length;
-  }, [posts, protectionOn, scannedCount]);
+  }, [posts, protectionOn]);
 
   const breakdown = useMemo(
     () => ({
       deepfakes: 0,
-      fakeNews: detectedCount,
+      fakeNews: detectedCount, // use the real flagged count
       manipulated: 0,
     }),
     [detectedCount]
@@ -73,12 +93,10 @@ export default function DemoPage() {
   }
 
   function handleAcknowledge(id) {
-    // ✅ do not hide bar — just mark the post acknowledged
     setAcknowledged((prev) => ({ ...prev, [id]: true }));
   }
 
   function handleViewAnyway(id) {
-    // ✅ allow viewing blocked content, but keep the bar visible
     setViewAnyway((prev) => ({ ...prev, [id]: true }));
   }
 
@@ -110,6 +128,8 @@ export default function DemoPage() {
               text={`${verifiedCount} Verified`}
             />
             <BadgeDot color="bg-rose-400" text={`${detectedCount} Flagged`} />
+            <BadgeDot color="bg-amber-300" text={`${blockedCount} Blocked`} />
+            <BadgeDot color="bg-sky-300" text={`${reportedCount} Reported`} />
           </div>
         </div>
       </div>
@@ -193,7 +213,6 @@ export default function DemoPage() {
                   className="relative overflow-hidden rounded-2xl bg-[#242526] ring-1 ring-white/5 transition
                              hover:-translate-y-0.5 hover:ring-white/10 hover:shadow-[0_18px_50px_rgba(0,0,0,0.35)]"
                 >
-                  {/* ✅ TruVerse bar ALWAYS stays for detected posts */}
                   {isDetected ? (
                     <div className="border-b border-white/10 bg-[#2A1B1B] px-4 py-3">
                       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -275,7 +294,7 @@ export default function DemoPage() {
                     </div>
                   ) : null}
 
-                  {/* ✅ Block overlay (only if blocked and not viewing anyway) */}
+                  {/* Block overlay */}
                   {isBlocked && !allowView ? (
                     <div className="absolute inset-0 z-20">
                       <div className="absolute inset-0 backdrop-blur-md bg-black/35" />
@@ -328,7 +347,7 @@ export default function DemoPage() {
                     </div>
                   ) : null}
 
-                  {/* Post content (blur only if blocked AND not viewing anyway) */}
+                  {/* Post content */}
                   <div
                     className={[
                       "p-4",
@@ -425,6 +444,8 @@ export default function DemoPage() {
             scannedCount={scannedCount}
             verifiedCount={verifiedCount}
             detectedCount={detectedCount}
+            blockedCount={blockedCount}
+            reportedCount={reportedCount}
             breakdown={breakdown}
             onReset={resetDemo}
           />

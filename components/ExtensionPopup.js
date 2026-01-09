@@ -7,6 +7,8 @@ export default function ExtensionPopup({
   scannedCount,
   verifiedCount,
   detectedCount,
+  blockedCount,
+  reportedCount,
   breakdown,
   onReset,
 }) {
@@ -17,7 +19,6 @@ export default function ExtensionPopup({
       <div className="bg-gradient-to-r from-[#4B2CE6] to-[#2E4BFF] px-5 py-3.5 text-white">
         <div className="flex items-center gap-1.5">
           <img src="/truverse.png" alt="TruVerse" className="h-6 w-6" />
-
           <div className="text-base font-black tracking-tight">TruVerse</div>
 
           <span
@@ -58,9 +59,16 @@ export default function ExtensionPopup({
           </div>
         </div>
 
+        {/* ✅ Main stats */}
         <div className="mt-3 grid grid-cols-2 gap-3">
           <StatCard title="Verified" value={verifiedCount} tone="good" />
           <StatCard title="Flagged" value={detectedCount} tone="bad" />
+        </div>
+
+        {/* ✅ New action stats */}
+        <div className="mt-3 grid grid-cols-2 gap-3">
+          <StatCard title="Blocked" value={blockedCount} tone="neutral" />
+          <StatCard title="Reported" value={reportedCount} tone="neutral" />
         </div>
 
         <div className="mt-4">
@@ -105,9 +113,25 @@ export default function ExtensionPopup({
 }
 
 function StatCard({ title, value, tone }) {
-  const bg = tone === "good" ? "bg-emerald-50" : "bg-rose-50";
-  const text = tone === "good" ? "text-emerald-800" : "text-rose-800";
-  const ring = tone === "good" ? "ring-emerald-200/60" : "ring-rose-200/60";
+  const map = {
+    good: {
+      bg: "bg-emerald-50",
+      text: "text-emerald-800",
+      ring: "ring-emerald-200/60",
+    },
+    bad: {
+      bg: "bg-rose-50",
+      text: "text-rose-800",
+      ring: "ring-rose-200/60",
+    },
+    neutral: {
+      bg: "bg-slate-50",
+      text: "text-slate-800",
+      ring: "ring-slate-200/70",
+    },
+  };
+
+  const { bg, text, ring } = map[tone] || map.neutral;
 
   return (
     <div

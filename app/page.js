@@ -137,7 +137,7 @@ export default function Page() {
               href="/demo"
               className="rounded-xl bg-[#1B57F2] px-4 py-2 text-sm font-semibold text-white hover:opacity-95"
             >
-              Live preview
+              Live Demo
             </a>
           </div>
         </div>
@@ -170,13 +170,13 @@ export default function Page() {
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#preview"
+                  href="/demo"
                   className="rounded-2xl bg-white px-5 py-3 text-center text-sm font-extrabold text-[#0B2B7A] shadow-sm hover:opacity-95"
                 >
-                  See live preview (sample)
+                  See Live Demo
                 </a>
                 <a
-                  href="#validation"
+                  href="#pricing"
                   className="rounded-2xl border border-white/25 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-white/15"
                 >
                   TruVerse Pricing
@@ -218,9 +218,6 @@ export default function Page() {
                 <div className="mt-5 rounded-2xl bg-slate-50 p-4">
                   <div className="text-sm font-extrabold text-slate-800">
                     “Stop AI-generated fake content before it spreads.”
-                  </div>
-                  <div className="mt-1 text-xs text-slate-500">
-                    This is a UI/flow prototype for Lean Pitch validation.
                   </div>
                 </div>
               </div>
@@ -275,7 +272,7 @@ export default function Page() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h3 className="text-xl font-black tracking-tight text-slate-900">
-                Live preview (Sample)
+                Live preview
               </h3>
               <p className="mt-1 text-sm text-slate-600">
                 Shows how TruVerse would automatically scan and label posts in
@@ -524,10 +521,6 @@ export default function Page() {
               <button className="mt-6 w-full rounded-2xl bg-slate-100 px-4 py-3 text-sm font-extrabold text-slate-800 hover:bg-slate-200">
                 Extension Settings (mock)
               </button>
-
-              <div className="mt-3 text-xs text-slate-500">
-                Prototype preview for pitch and interviews (no model yet).
-              </div>
             </div>
           </div>
         </div>
@@ -535,7 +528,7 @@ export default function Page() {
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
-          TruVerse Prototype v1 • Landing + real-time preview (mock data)
+          TruVerse Prototype
         </div>
       </footer>
     </main>
