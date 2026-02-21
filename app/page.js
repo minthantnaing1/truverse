@@ -59,7 +59,7 @@ export default function Page() {
 
   const visiblePosts = useMemo(
     () => FEED.filter((p) => postStatus[p.id] !== "blocked"),
-    [postStatus]
+    [postStatus],
   );
 
   const stats = useMemo(() => {
@@ -176,7 +176,7 @@ export default function Page() {
                   See Live Demo
                 </a>
                 <a
-                  href="#pricing"
+                  href="/pricing"
                   className="rounded-2xl border border-white/25 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-white/15"
                 >
                   TruVerse Pricing
