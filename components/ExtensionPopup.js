@@ -103,6 +103,12 @@ export default function ExtensionPopup({
             Reset
           </button>
         </div>
+        <button
+          onClick={() => window.open("/dashboard", "_blank")}
+          className="mt-2 w-full rounded-2xl bg-[#1B57F2] px-4 py-3 text-xs font-extrabold text-white transition hover:opacity-95 active:scale-[0.98]"
+        >
+          Open Dashboard
+        </button>
 
         <button className="mt-2 w-full rounded-2xl bg-slate-100 px-4 py-3 text-xs font-extrabold text-slate-800 transition hover:bg-slate-200 active:scale-[0.98]">
           Extension settings
