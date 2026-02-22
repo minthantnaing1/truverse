@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { ThumbsUp, MessageCircle, Share } from "lucide-react";
 import DemoTopBar from "@/components/DemoTopBar";
 import ExtensionPopup from "@/components/ExtensionPopup";
 import AnalysisModal from "@/components/AnalysisModal";
@@ -139,12 +140,18 @@ export default function DemoPage() {
         <aside className="hidden lg:col-span-3 lg:block">
           <div className="rounded-2xl bg-[#242526] p-4 ring-1 ring-white/5 transition hover:ring-white/10">
             <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-full bg-[#3A3B3C] text-sm font-black">
-                YN
+              <div className="h-11 w-11 rounded-full overflow-hidden">
+                
+                <img
+                  src={"/avatars/weeknd.jpg"}
+                  alt={"Abel"}
+                  className="h-full w-full object-cover"
+                />
+                
               </div>
               <div>
                 <div className="text-sm font-semibold text-white/90">
-                  Your Name
+                  Abel
                 </div>
                 <div className="text-xs text-white/60">Home</div>
               </div>
@@ -181,8 +188,14 @@ export default function DemoPage() {
           {/* Composer */}
           <div className="mt-4 rounded-2xl bg-[#242526] p-4 ring-1 ring-white/5 transition hover:ring-white/10">
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-[#3A3B3C] text-sm font-black">
-                YN
+              <div className="h-11 w-11 rounded-full overflow-hidden">
+                
+                <img
+                  src={"/avatars/weeknd.jpg"}
+                  alt={"Abel"}
+                  className="h-full w-full object-cover"
+                />
+                
               </div>
 
               <div className="flex-1 rounded-full bg-[#3A3B3C] px-4 py-2.5 text-sm text-white/60 transition hover:bg-[#454647]">
@@ -358,9 +371,18 @@ export default function DemoPage() {
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="grid h-11 w-11 place-items-center rounded-full bg-[#3A3B3C] text-sm font-black">
-                          {getInitials(p.author)}
+                  
+                        <div className="h-11 w-11 rounded-full overflow-hidden">
+                          
+                          <img
+                            src={p.avatar || "/avatars/default.jpg"}
+                            alt={p.author}
+                            className="h-full w-full object-cover"
+                          />
                         </div>
+
+                      
+                        
 
                         <div>
                           <div className="flex items-center gap-2">
@@ -396,9 +418,7 @@ export default function DemoPage() {
 
                     <div className="mt-4 flex items-center justify-between border-b border-white/10 pb-3 text-sm text-white/70">
                       <div className="inline-flex items-center gap-2">
-                        <span className="grid h-5 w-5 place-items-center rounded-full bg-[#1877F2] text-xs">
-                          👍
-                        </span>
+                        <img src="/reactions/like.svg" className="h-5 w-5" />
                         <span>{p.likes ?? 0}</span>
                       </div>
 
@@ -409,9 +429,9 @@ export default function DemoPage() {
                     </div>
 
                     <div className="grid grid-cols-3 gap-2 p-2 text-sm font-semibold text-white/75">
-                      <ActionBtn icon="👍" label="Like" />
-                      <ActionBtn icon="💬" label="Comment" />
-                      <ActionBtn icon="↗" label="Share" />
+                      <ActionBtn icon={<ThumbsUp size={18} />} label="Like" />
+                      <ActionBtn icon={<MessageCircle size={18} />} label="Comment" />
+                      <ActionBtn icon={<Share size={18} />} label="Share" />
                     </div>
                   </div>
                 </div>
@@ -501,8 +521,12 @@ function StoryCard({ title, me }) {
           +
         </div>
       ) : (
-        <div className="absolute left-2 top-2 grid h-9 w-9 place-items-center rounded-full bg-black/35 text-white text-xs font-black ring-2 ring-[#1877F2]">
-          {getInitials(title)}
+        <div className="absolute left-2 top-2 h-9 w-9 rounded-full overflow-hidden ring-2 ring-[#1877F2]">
+          <img
+            src={`/avatars/default.jpg`}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
         </div>
       )}
 
@@ -525,7 +549,7 @@ function ComposerBtn({ icon, label }) {
 function ActionBtn({ icon, label }) {
   return (
     <button className="flex items-center justify-center gap-2 rounded-xl py-2 transition hover:bg-white/10 active:scale-[0.98]">
-      <span className="text-base">{icon}</span>
+      <span className="flex items-center justify-center">{icon}</span>
       <span>{label}</span>
     </button>
   );

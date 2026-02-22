@@ -2,6 +2,7 @@
   {
     "id": "p1",
     "author": "Emma Thompson",
+    "avatar": "/avatars/person1.jpg",
     "verified": true,
     "time": "2h",
     "text": "Just got back from an incredible weekend getaway! 🏝️🌤️ The beach was absolutely beautiful and the sunset last night was breathtaking. Already planning my next trip!",
@@ -13,6 +14,7 @@
   {
     "id": "p2",
     "author": "Daily Health Tips",
+    "avatar": "/avatars/person2.jpg",
     "verified": false,
     "time": "12h",
     "text": "🔥 MIRACLE CURE DISCOVERED! 🔥\n\nDoctors HATE this one simple trick! This amazing natural remedy cures ALL diseases instantly...\n\nClick the link to learn more before Big Pharma takes this down!",
@@ -50,6 +52,7 @@
   {
     "id": "p3",
     "author": "TechNews Daily",
+    "avatar": "/avatars/person3.jpg",
     "verified": true,
     "time": "3h",
     "text": "BREAKING: Major tech company announces revolutionary quantum breakthrough that will change everything we know about computing. SHARE before it gets deleted!",
@@ -75,6 +78,7 @@
   {
     "id": "p4",
     "author": "Foodie Corner",
+    "avatar": "/avatars/person4.jpg",
     "verified": false,
     "time": "6h",
     "text": "Quick dinner idea: garlic butter shrimp pasta 🍤🧄 Ready in 15 minutes. Who wants the recipe?",
@@ -86,6 +90,7 @@
   {
     "id": "p5",
     "author": "Nature Moments",
+    "avatar": "/avatars/default.jpg",
     "verified": true,
     "time": "1d",
     "text": "Morning walk 🌿 Take a breath, slow down, and notice the small things.",
@@ -93,5 +98,271 @@
     "comments": 88,
     "shares": 33,
     "detected": false
+  },
+  
+  {
+    "id": "p6",
+    "author": "Nina Chen",
+    "avatar": "/avatars/default.jpg",
+    "text": "Just arrived in Bangkok! 🌴✈️",
+    "time": "2h",
+    "verified": true,
+    "detected": false,
+    "likes": 124,
+    "comments": 18,
+    "shares": 2,
+    "media": true
+  },
+
+  {
+    "id": "p7",
+    "author": "Abel Wong",
+    "avatar": "/avatars/default.jpg",
+    "text": "New startup idea dropping soon 👀",
+    "time": "3h",
+    "verified": false,
+    "detected": false,
+    "likes": 89,
+    "comments": 12,
+    "shares": 1
+  },
+
+  {
+    "id": "p8",
+    "author": "Jess Taylor",
+    "avatar": "/avatars/default.jpg",
+    "text": "BREAKING: Scientists confirm miracle cure discovered!",
+    "time": "5h",
+    "verified": false,
+    "detected": true,
+    "confidence": 96,
+    "label": "Potential AI-Generated Fake News",
+    "analysis": {
+      "aiWritingProbability": 97,
+      "credibilityScore": 18,
+      "verifiedSource": false,
+      "patterns": [
+        "Sensational headline",
+        "No cited sources",
+        "Viral framing language"
+      ],
+      "flags": [
+        "Medical misinformation risk",
+        "Unverified scientific claim"
+      ]
+    },
+    "likes": 401,
+    "comments": 202,
+    "shares": 78
+  },
+
+  {
+    "id": "p9",
+    "author": "Min Park",
+    "avatar": "/avatars/default.jpg",
+    "text": "Late night coding session 💻☕",
+    "time": "6h",
+    "verified": false,
+    "detected": false,
+    "likes": 56,
+    "comments": 4,
+    "shares": 0
+  },
+
+  {
+    "id": "p10",
+    "author": "David Kim",
+    "avatar": "/avatars/default.jpg",
+    "text": "This investment will 1000x in a week!!!",
+    "time": "8h",
+    "verified": false,
+    "detected": true,
+    "confidence": 92,
+    "label": "AI-Generated Scam Content",
+    "analysis": {
+      "aiWritingProbability": 93,
+      "credibilityScore": 12,
+      "verifiedSource": false,
+      "patterns": [
+        "Guaranteed profit claim",
+        "Urgency language",
+        "Unrealistic returns"
+      ],
+      "flags": [
+        "Financial scam pattern",
+        "Manipulative call-to-action"
+      ]
+    },
+    "likes": 210,
+    "comments": 90,
+    "shares": 33
+  },
+
+  {
+    "id": "p11",
+    "author": "Sophia Lee",
+    "avatar": "/avatars/default.jpg",
+    "text": "Homemade pasta tonight 🍝",
+    "time": "10h",
+    "verified": false,
+    "detected": false,
+    "likes": 178,
+    "comments": 21,
+    "shares": 5,
+    "media": true
+  },
+
+  {
+    "id": "p12",
+    "author": "Mark Johnson",
+    "avatar": "/avatars/default.jpg",
+    "text": "Throwback to last summer 🏖️",
+    "time": "12h",
+    "verified": false,
+    "detected": false,
+    "likes": 244,
+    "comments": 30,
+    "shares": 6,
+    "media": true
+  },
+
+  {
+    "id": "p13",
+    "author": "Lily Zhang",
+    "avatar": "/avatars/default.jpg",
+    "text": "AI will replace all jobs by 2030!",
+    "time": "13h",
+    "verified": false,
+    "detected": true,
+    "confidence": 88,
+    "label": "Misleading AI Claim",
+    "analysis": {
+      "aiWritingProbability": 85,
+      "credibilityScore": 40,
+      "verifiedSource": false,
+      "patterns": [
+        "Overgeneralization",
+        "Speculative prediction",
+        "No supporting data"
+      ],
+      "flags": [
+        "Misleading future claim"
+      ]
+    },
+    "likes": 311,
+    "comments": 140,
+    "shares": 55
+  },
+
+  {
+    "id": "p14",
+    "author": "Chris Evans",
+    "avatar": "/avatars/default.jpg",
+    "text": "Gym progress 💪",
+    "time": "15h",
+    "verified": true,
+    "detected": false,
+    "likes": 520,
+    "comments": 44,
+    "shares": 3,
+    "media": true
+  },
+
+  {
+    "id": "p15",
+    "author": "Emma Watson",
+    "avatar": "/avatars/emma.jpg",
+    "text": "Reading recommendations?",
+    "time": "18h",
+    "verified": true,
+    "detected": false,
+    "likes": 5610,
+    "comments": 1120,
+    "shares": 412
+  },
+
+  {
+    "id": "p16",
+    "author": "Noah Brown",
+    "avatar": "/avatars/default.jpg",
+    "text": "Crazy weather today 🌧️",
+    "time": "1d",
+    "verified": false,
+    "detected": false,
+    "likes": 74,
+    "comments": 9,
+    "shares": 1
+  },
+
+  {
+    "id": "p17",
+    "author": "Olivia Smith",
+    "avatar": "/avatars/default.jpg",
+    "text": "Graduation day 🎓",
+    "time": "1d",
+    "verified": false,
+    "detected": false,
+    "likes": 890,
+    "comments": 210,
+    "shares": 40,
+    "media": true
+  },
+
+  {
+    "id": "p18",
+    "author": "Ethan Clark",
+    "avatar": "/avatars/default.jpg",
+    "text": "Win an iPhone by sharing this post!",
+    "time": "2d",
+    "verified": false,
+    "detected": true,
+    "confidence": 95,
+    "label": "AI-Generated Giveaway Scam",
+    "analysis": {
+      "aiWritingProbability": 96,
+      "credibilityScore": 10,
+      "verifiedSource": false,
+      "patterns": [
+        "Mass-share incentive",
+        "Prize bait wording",
+        "Lack of official source"
+      ],
+      "flags": [
+        "Common social media scam pattern"
+      ]
+    },
+    "likes": 1500,
+    "comments": 600,
+    "shares": 400
+  },
+
+  {
+    "id": "p19",
+    "author": "Ava Martinez",
+    "avatar": "/avatars/default.jpg",
+    "text": "Sunset at the beach 🌅",
+    "time": "2d",
+    "verified": false,
+    "detected": false,
+    "likes": 320,
+    "comments": 22,
+    "shares": 4,
+    "media": true
+  },
+
+  {
+    "id": "p20",
+    "author": "Lucas Silva",
+    "avatar": "/avatars/default.jpg",
+    "text": "Coffee first ☕",
+    "time": "3d",
+    "verified": false,
+    "detected": false,
+    "likes": 110,
+    "comments": 8,
+    "shares": 0
   }
+
+
 ]
+
