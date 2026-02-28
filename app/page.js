@@ -126,6 +126,7 @@ export default function Page() {
             </div>
           </div>
 
+
           <div className="hidden items-center gap-2 sm:flex">
             <a
               href="#how"
@@ -142,6 +143,7 @@ export default function Page() {
           </div>
         </div>
       </header>
+
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -225,6 +227,60 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+
+      {/* Why Choose TruVerse */}
+          <section className="relative -mt-8 pt-24 pb-16">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#EEF2FF] to-[#F4F7FF]" />
+              <div className="relative mx-auto max-w-6xl px-4">
+                <div className="rounded-3xl border border-indigo-100 bg-white/80 backdrop-blur p-6 shadow-lg sm:p-8">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <h2 className="text-2xl font-black tracking-tight text-slate-900">
+                        Why choose TruVerse
+                      </h2>
+                      <p className="mt-2 max-w-2xl text-sm text-slate-600">
+                        Built for a world flooded with AI-generated content, TruVerse helps
+                        you navigate social platforms with confidence — without changing how
+                        you browse.
+                      </p>
+                    </div>
+
+                    <div className="text-xs font-semibold text-slate-500">
+                      Designed for everyday users
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <WhyCard
+                      title="Real-time protection"
+                      desc="Analyzes posts instantly as you scroll — no manual checks needed."
+                    />
+                    <WhyCard
+                      title="Works everywhere"
+                      desc="Designed to protect across social media, news sites, and online platforms."
+                    />
+                    <WhyCard
+                      title="User in control"
+                      desc="Ignore, block, or report content — you decide how strict protection should be."
+                    />
+                    <WhyCard
+                      title="Trust-focused AI"
+                      desc="Prioritizes accuracy and transparency to avoid false alarms."
+                    />
+                  </div>
+
+                  <div className="mt-8 rounded-2xl bg-slate-50 p-5 text-center">
+                    <div className="text-sm font-extrabold text-slate-800">
+                      TruVerse doesn’t replace your judgment — it strengthens it.
+                    </div>
+                    <div className="mt-1 text-xs text-slate-600">
+                      Think of it as antivirus software, but for misinformation.
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
 
       {/* How it works */}
       <section id="how" className="mx-auto max-w-6xl px-4 py-12">
@@ -571,6 +627,19 @@ function BreakRow({ label, value }) {
     <div className="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3">
       <div className="text-slate-700">{label}</div>
       <div className="font-black text-slate-900">{value}</div>
+    </div>
+  );
+}
+
+function WhyCard({ title, desc }) {
+  return (
+    <div className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-[#EAF1FF] to-[#DCE7FF] p-5 transition hover:-translate-y-1 hover:shadow-lg">
+      <div className="text-sm font-extrabold text-[#0B2B7A]">
+        {title}
+      </div>
+      <div className="mt-2 text-xs leading-relaxed text-slate-700">
+        {desc}
+      </div>
     </div>
   );
 }
