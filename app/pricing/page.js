@@ -9,8 +9,8 @@ const B2C_PLANS = [
     key: "starter",
     name: "Starter",
     badge: "7-day free trial",
-    priceMonthly: 0,
-    priceYearly: 0,
+    priceMonthly: 99,
+    priceYearly: 990,
     desc: "Try TruVerse protection before committing.",
     features: [
       "Real-time browser scanning",
